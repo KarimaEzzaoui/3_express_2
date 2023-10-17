@@ -1,0 +1,10 @@
+doctype html
+html
+  head
+    title Books
+  body
+    h1 Books
+    ul
+      each book in books
+        li= `${book.title} by ${book.author}`
+    a(href='/auth/logout') Logout
