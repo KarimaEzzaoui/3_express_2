@@ -136,18 +136,20 @@ authRouter.get('/logout', (req, res) => {
 });
 
 booksRouter.get('/', authenticate, async (req, res) => {
+  // const books = await Book.find().limit(10);
   const books = [
-    { title: 'Book 1', author: 'Author 1' },
-    { title: 'Book 2', author: 'Author 2' },
-    { title: 'Book 3', author: 'Author 3' },
-    { title: 'Book 4', author: 'Author 4' },
-    { title: 'Book 5', author: 'Author 5' },
-    { title: 'Book 6', author: 'Author 6' },
-    { title: 'Book 7', author: 'Author 7' },
-    { title: 'Book 8', author: 'Author 8' },
-    { title: 'Book 9', author: 'Author 9' },
+    { title: 'The Imaginary Journey', author: 'John Imaginer' },
+    { title: 'Dreams of Fiction', author: 'Alice Dreamer' },
+    { title: 'Fantasy Realm', author: 'Bob Fantasy' },
+    { title: 'Enchanted Tales', author: 'Eva Enchanter' },
+    { title: 'Mythical Adventures', author: 'Mike Myth' },
+    { title: 'Whimsical Wonders', author: 'Wendy Whimsy' },
+    { title: 'Fables and Fairytales', author: 'Frank Fabulist' },
+    { title: 'Magical Realms', author: 'Molly Magician' },
+    { title: 'Epic Quests', author: 'Eric Epic' },
+    { title: 'Wizards and Wonders', author: 'Walter Wizard' },
   ];
-
+  
   res.render('books', { books });
 });
 
@@ -156,6 +158,7 @@ app.use('/books', booksRouter);
 
 // Pug configuration
 app.set('view engine', 'pug');
+app.set('views','./views');
 
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);

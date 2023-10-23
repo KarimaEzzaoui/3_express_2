@@ -2,9 +2,11 @@ doctype html
 html
   head
     title Books
-  body
-    h1 Books
-    ul
-      each book in books
-        li= `${book.title} by ${book.author}`
-    a(href='/auth/logout') Logout
+    link(rel='stylesheet', href='/css/build.css')
+  body(class='min-h-screen flex items-center justify-center bg-gray-200')
+    div(class='bg-white p-8 rounded shadow-md max-w-md w-full')
+      h1(class='text-3xl font-bold mb-4 text-center text-gray-800') Books
+      ul(class='list-disc pl-4')
+        each book in books
+          li(class='text-gray-700 mb-2')= `${book.title} by ${book.author}`
+      a(href='/auth/logout' class='block mt-4 bg-blue-500 text-white rounded py-2 px-4 hover:bg-blue-700 text-center') Logout

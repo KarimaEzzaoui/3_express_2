@@ -2,7 +2,7 @@ doctype html
 html
   head
     title Login
-    link(rel='stylesheet', href='/css/styles.css')
+    link(rel='stylesheet', href='/css/build.css')
   body
     div(class='min-h-screen flex items-center justify-center bg-gray-200')
       div(class='bg-white p-8 rounded shadow-md w-96')
@@ -17,3 +17,7 @@ html
           div
             input(type='submit', value='Login', class='bg-blue-500 text-white rounded py-2 px-4 hover:bg-blue-700')
         p(style='color:red;' class='text-sm') #{messages.error}
+        // Add the Sign Up link here
+        p(class='mt-4 text-gray-700 text-sm')
+          | Don't have an account? 
+          a(href='/auth/register' style='color: #4299e1; text-decoration: underline; hover:color: #2b6cb0' class='text-blue-500 hover:underline') Sign Up

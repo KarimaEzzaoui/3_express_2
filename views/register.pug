@@ -2,15 +2,21 @@ doctype html
 html
   head
     title Register
-  body
-    h1 Register
-    form(action='/auth/register', method='post')
-      div
-        label(for='username') Username:
-        input(type='text', name='username', required)
-      div
-        label(for='password') Password:
-        input(type='password', name='password', required)
-      div
-        input(type='submit', value='Register')
-    p(style='color:red;') #{messages.error}
+    link(rel='stylesheet', href='/css/build.css')
+  body(class='min-h-screen flex items-center justify-center bg-gray-200')
+    div(class='bg-white p-8 rounded shadow-md w-96')
+      h1(class='text-2xl font-bold mb-4') Register
+      form(action='/auth/register', method='post')
+        div(class='mb-4')
+          label(for='username' class='block text-gray-700 text-sm font-bold mb-2') Username:
+          input(type='text', name='username', class='border rounded w-full py-2 px-3' required)
+        div(class='mb-4')
+          label(for='password' class='block text-gray-700 text-sm font-bold mb-2') Password:
+          input(type='password', name='password', class='border rounded w-full py-2 px-3' required)
+        div
+          input(type='submit', value='Register', class='bg-blue-500 text-white rounded py-2 px-4 hover:bg-blue-700')
+      p(style='color:red;' class='text-sm') #{messages.error}
+      // Add the Sign Up link here
+      p(class='mt-4 text-gray-700 text-sm')
+        | have already an account? 
+        a(href='/auth/login' style='color: #4299e1; text-decoration: underline; hover:color: #2b6cb0' class='text-blue-500 hover:underline') Login
